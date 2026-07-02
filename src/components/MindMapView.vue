@@ -1,6 +1,6 @@
 <template>
   <div ref="mindmapContainer" class="w-full h-full min-h-[400px] relative">
-    <svg ref="svgEl" class="w-full h-full" />
+    <svg ref="svgEl" class="w-full h-full markmap" />
     
     <!-- Controls -->
     <div class="absolute bottom-4 right-4 flex gap-2">
@@ -252,3 +252,18 @@ onMounted(() => {
   if (props.data) renderMindmap()
 })
 </script>
+
+<style>
+/* Force text colors in Markmap SVG for readability */
+svg.markmap text,
+.markmap text {
+  fill: #ffffff !important; /* Pure white in dark mode */
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.light svg.markmap text,
+.light .markmap text {
+  fill: #0f172a !important; /* Dark slate in light mode */
+}
+</style>

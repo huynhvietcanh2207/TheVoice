@@ -57,7 +57,7 @@
             class="px-5 py-2 text-sm font-bold rounded-lg transition-all duration-200 shrink-0 snap-start"
             :class="activeTab === tab.key 
               ? 'bg-accent-500 text-white shadow-lg shadow-accent-500/30' 
-              : 'text-text-muted hover:text-text-main hover:bg-navy-800/50'"
+              : 'text-text-main/70 hover:text-text-main hover:bg-navy-800/50'"
           >
             {{ tab.label }}
           </button>

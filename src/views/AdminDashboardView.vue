@@ -11,21 +11,21 @@
       <button 
         @click="activeTab = 'stats'"
         class="pb-4 px-4 text-sm font-bold border-b-2 transition-all duration-300 shrink-0 cursor-pointer"
-        :class="activeTab === 'stats' ? 'border-accent-500 text-accent-500' : 'border-transparent text-text-muted hover:text-text-main'"
+        :class="activeTab === 'stats' ? 'border-accent-500 text-accent-500' : 'border-transparent text-text-main/70 hover:text-text-main'"
       >
         📊 {{ $t('admin.tab_stats') }}
       </button>
       <button 
         @click="activeTab = 'accounts'"
         class="pb-4 px-4 text-sm font-bold border-b-2 transition-all duration-300 shrink-0 cursor-pointer"
-        :class="activeTab === 'accounts' ? 'border-accent-500 text-accent-500' : 'border-transparent text-text-muted hover:text-text-main'"
+        :class="activeTab === 'accounts' ? 'border-accent-500 text-accent-500' : 'border-transparent text-text-main/70 hover:text-text-main'"
       >
         👤 {{ $t('admin.tab_accounts') }}
       </button>
       <button 
         @click="activeTab = 'ai-config'"
         class="pb-4 px-4 text-sm font-bold border-b-2 transition-all duration-300 shrink-0 cursor-pointer"
-        :class="activeTab === 'ai-config' ? 'border-accent-500 text-accent-500' : 'border-transparent text-text-muted hover:text-text-main'"
+        :class="activeTab === 'ai-config' ? 'border-accent-500 text-accent-500' : 'border-transparent text-text-main/70 hover:text-text-main'"
       >
         ⚙️ {{ $t('admin.tab_ai_config') }}
       </button>
