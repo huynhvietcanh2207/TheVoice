@@ -195,6 +195,9 @@ async function startAnalysis() {
       settingsStore.allApiKeys
     )
 
+    // Tự động xoay tua API key sang key tiếp theo để cân bằng tải cho các lượt phân tích sau
+    settingsStore.rotateKey()
+
     currentPercent.value = 100
     currentMessage.value = 'Hoàn tất!'
 
