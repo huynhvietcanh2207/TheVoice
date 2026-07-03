@@ -127,7 +127,10 @@ export const useAuthStore = defineStore('auth', () => {
 
       if (authErr) throw authErr
 
-      // Thêm hồ sơ người dùng vào bảng profiles
+      // Thêm hồ sơ người dùng vào bảng profiles (Tự động cấp quyền admin nếu tên là 'admin')
+      const isInitialAdmin = username.toLowerCase().trim() === 'admin' || email.toLowerCase().trim().startsWith('admin@')
+      const userRole = isInitialAdmin ? 'admin' : 'user'
+
       if (data.user) {
         const { error: profileErr } = await supabase
           .from('profiles')
@@ -135,7 +138,7 @@ export const useAuthStore = defineStore('auth', () => {
             {
               id: data.user.id,
               username,
-              role: 'user',
+              role: userRole,
               status: 'active'
             }
           ])
@@ -149,7 +152,7 @@ export const useAuthStore = defineStore('auth', () => {
           id: data.user.id,
           email: data.user.email,
           username: username,
-          role: 'user',
+          role: userRole,
           status: 'active'
         }
       } else {
